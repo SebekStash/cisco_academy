@@ -1,0 +1,25 @@
+================================================================================
+Dla initial konfiguracji na routerze/switchu dajemy: no no
+
+show running-config
+copy current-config startup-config
+reload
+
+================================================================================
+switch> enable
+switch# configure terminal
+switch(config)# hostname S1
+S1(config)# interface gigabitethernet 0/0/1   interface vlan 1
+S1(config-if)# ip address 192.168.1.10 255.255.255.0
+S1(config-if)# no shutdown
+S1(config-if)# exit
+S1(config)# default-gateway 192.168.1.1
+S1(config)# exit
+S1# show ip interface brief
+
+================================================================================
+C:\User> arp -d *
+C:\User> arp -a
+C:\User>
+
+================================================================================
